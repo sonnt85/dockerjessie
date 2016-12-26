@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
 	net-tools \
 	openssh-server \
 	expect \
-  git \
+        git \
+	sudo \
 	build-essential
 RUN echo  "GatewayPorts yes\n\
   X11Forwarding yes\n\
@@ -15,7 +16,7 @@ RUN echo  "GatewayPorts yes\n\
   PrintLastLog yes\n\
   PermitRootLogin yes\n\
   TCPKeepAlive yes" >> /etc/ssh/sshd_config;
- VOLUME ["/tmp/.X11-unix"]
+VOLUME ["/tmp/.X11-unix"]
  #create user with sudo perm
 #RUN adduser --disabled-password --gecos sonnt sonnt
 RUN mkdir -p /home/sonnt/workspace && \
