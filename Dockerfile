@@ -8,7 +8,17 @@ RUN apt-get update && apt-get install -y \
 	expect \
         git \
 	sudo \
-	build-essential
+	ctags \
+        libc6-dbg \
+	gdb \
+	valgrind \
+	curl \
+	lib32z1 lib32ncurses5 \
+	bzip2 \
+	unzip \
+	xz-utils \
+	usbutils \
+        build-essential
 RUN echo  "GatewayPorts yes\n\
   X11Forwarding yes\n\
   X11DisplayOffset 10\n\
